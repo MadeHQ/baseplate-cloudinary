@@ -1,11 +1,11 @@
 'use strict';
 
-var cloudinary = require('cloudinary').v2;
+const cloudinary = require('cloudinary').v2;
 
 function cloudinaryCroppedImage(publicId, context) {
-    var options = context.hash;
+    const options = context.hash;
 
-    var canRun = (
+    const canRun = (
         publicId &&
         options.width &&
         options.height &&
@@ -17,9 +17,14 @@ function cloudinaryCroppedImage(publicId, context) {
     }
 
     options.secure = true;
-    options.fetch_format = 'auto';
+    options.fetch_format = 'auto'; // eslint-disable-line camelcase
     options.quality = options.quality || 'auto';
-    if (options.crop) {
+
+    /**
+     * Some crop methods don't support gravity,
+     * so don't accept the option if it's one of those methods.
+     */
+    if (['fit', 'limit', 'mfit', 'pad', 'lpad'].indexOf(options.crop) === -1) {
         options.gravity = options.gravity || 'auto';
     }
 
@@ -27,5 +32,5 @@ function cloudinaryCroppedImage(publicId, context) {
 }
 
 module.exports = {
-    cloudinaryCroppedImage: cloudinaryCroppedImage
-}
+    cloudinaryCroppedImage
+};
