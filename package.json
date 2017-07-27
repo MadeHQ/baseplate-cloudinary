@@ -7,7 +7,7 @@
   "author": "Made Media Ltd. <developers@mademedia.co.uk> (made.media)",
   "repository": "github:MadeHQ/baseplate-cloudinary",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=4.0.0"
   },
   "scripts": {
     "test": "xo -- index.js"
