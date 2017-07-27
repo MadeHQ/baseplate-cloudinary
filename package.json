@@ -1,28 +1,22 @@
 {
   "name": "baseplate-cloudinary",
   "main": "index.js",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "license": "MIT",
-  "description": "Experimental Cloudinary plugin for Baseplate",
+  "description": "Cloudinary plugin for Baseplate",
   "author": "Made Media Ltd. <developers@mademedia.co.uk> (made.media)",
   "repository": "github:MadeHQ/baseplate-cloudinary",
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
-    "lint": "xo -- index.js"
+    "test": "xo -- index.js"
   },
   "xo": {
-    "space": 4,
-    "rules": {
-      "xo/filename-case": [
-        "error",
-        "kebabCase"
-      ]
-    }
+    "space": 4
   },
   "devDependencies": {
-    "xo": "0.16.0"
+    "xo": "0.18.2"
   },
   "dependencies": {
     "cloudinary": "1.4.1"
