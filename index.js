@@ -13,7 +13,8 @@ function cloudinaryCroppedImage(publicId, context) {
     );
 
     if (!canRun) {
-        throw new TypeError('Missing arguments');
+        // throw new TypeError('Missing arguments');
+        console.log('TypeError: Missing arguments');
     }
 
     options.secure = true;
