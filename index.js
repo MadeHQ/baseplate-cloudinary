@@ -5,16 +5,14 @@ const cloudinary = require('cloudinary').v2;
 function cloudinaryCroppedImage(publicId, context) {
     const options = context.hash;
 
-    const canRun = (
-        publicId &&
-        options.width &&
-        options.height &&
-        options.crop
-    );
+    const { width, height, crop } = options;
 
-    if (!canRun) {
-        // throw new TypeError('Missing arguments');
-        console.log('TypeError: Missing arguments');
+    if (!crop) {
+        crop = 'fill';
+    }
+
+    if (!publicId || !width || !height) {
+        return 'https://via.placeholder.com/720x405?text=Missing+arguments';
     }
 
     options.secure = true;
