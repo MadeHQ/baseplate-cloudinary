@@ -1,7 +1,7 @@
 {
   "name": "baseplate-cloudinary",
   "main": "index.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "description": "Cloudinary plugin for Baseplate",
   "author": "Made Media Ltd. <developers@mademedia.co.uk> (made.media)",
