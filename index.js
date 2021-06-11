@@ -11,7 +11,7 @@ function cloudinaryCroppedImage(publicId, context) {
         crop = 'fill';
     }
 
-    if (!publicId || !width || !height) {
+    if (!publicId || (!width && !height)) {
         return 'https://via.placeholder.com/720x405?text=Missing+arguments';
     }
 
