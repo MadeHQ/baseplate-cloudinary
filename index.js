@@ -5,6 +5,10 @@ const cloudinary = require('cloudinary').v2;
 function cloudinaryCroppedImage(publicId, context) {
     const options = context.hash;
 
+    if (publicId && publicId.Path) {
+        publicId = publicId.Path;
+    }
+
     const { width, height, crop } = options;
 
     if (!crop) {
